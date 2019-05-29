@@ -1,7 +1,8 @@
 package kacpi;
 
 import kacpi.api.UserRepository;
-import org.springframework.context.ApplicationContext;
+import kacpi.domain.User;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,11 +11,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 class MainSpring {
 
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("konfiguracja.xml");
+    AbstractApplicationContext context = new ClassPathXmlApplicationContext("konfiguracja.xml");
+    context.registerShutdownHook();
 
     UserRepository repozytoriumUżywtkowników = context
         .getBean("repozytoriumUżywtkowników", UserRepository.class);
 
-    repozytoriumUżywtkowników.createUser("Janek");
+    User janek = repozytoriumUżywtkowników.createUser("Janek");
   }
 }
