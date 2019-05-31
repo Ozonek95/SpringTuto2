@@ -9,13 +9,12 @@ import org.springframework.context.event.ContextStartedEvent;
  */
 class CStartEventHandler implements ApplicationListener<ContextStartedEvent> {
 
-  @Autowired
-  HelloClass helloClass;
+//  @Autowired
+//  HelloClass helloClass;
 
   @Override
   public void onApplicationEvent(ContextStartedEvent event) {
     System.out.println("Start application event");
-    System.out.println(event.getSource());
-    helloClass.sayHello("from HelloClass in starting application event");
+   // helloClass.sayHello("from HelloClass in starting application event");
   }
 }

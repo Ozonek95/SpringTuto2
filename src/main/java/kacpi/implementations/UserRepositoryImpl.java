@@ -1,5 +1,6 @@
 package kacpi.implementations;
 
+import javax.annotation.PostConstruct;
 import kacpi.api.Logger;
 import kacpi.api.UserRepository;
 import kacpi.domain.User;
@@ -23,6 +24,11 @@ public class UserRepositoryImpl implements UserRepository {
   public User createUser(String name) {
     logger.log("Create user "+name+" "+localization+" dbName: "+dbName);
     return new User(name);
+  }
+
+  @PostConstruct
+  void initttt(){
+    System.out.println("Initialization User Repository AAAA");
   }
 
 //  public void setLogger(Logger logger) {

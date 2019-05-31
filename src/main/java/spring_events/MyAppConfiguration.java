@@ -1,6 +1,7 @@
 package spring_events;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -8,10 +9,12 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
+@ComponentScan
 class MyAppConfiguration {
+
   @Bean
   HelloClass helloClass(){
-    return new HelloClass();
+    return new HelloClass("My property");
   }
 
   @Bean

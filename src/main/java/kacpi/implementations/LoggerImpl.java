@@ -4,11 +4,12 @@ import java.time.LocalDate;
 import kacpi.api.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Kacper Staszek
  */
-
+@Component
 public class LoggerImpl implements Logger, BeanPostProcessor {
 
   private String name;

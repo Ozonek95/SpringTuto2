@@ -7,15 +7,15 @@ import org.springframework.context.event.ContextStoppedEvent;
 /**
  * @author Kacper Staszek
  */
+@MyAnnotation
 class CStopEventHandler implements ApplicationListener<ContextStoppedEvent> {
 
-  @Autowired
-  HelloClass helloClass;
+//  @Autowired
+//  HelloClass helloClass;
 
   @Override
   public void onApplicationEvent(ContextStoppedEvent event) {
     System.out.println("Application stopped event");
-    System.out.println(event.getSource());
-    helloClass.sayHello("Hello class from stopped event.");
+    //helloClass.sayHello("Hello class from stopped event.");
   }
 }
